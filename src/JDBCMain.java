@@ -15,6 +15,7 @@ public class JDBCMain {
 		PlayerController playerController = new PlayerController(c);
 		MatchController matchController = new MatchController(c);
 		BioParcController bioParcController = new BioParcController(c);
+		AnimalController animalController = new AnimalController(c);
 		
 //		Connection conn = null;
 //		Identity identity;
@@ -36,35 +37,36 @@ public class JDBCMain {
 			switch (option) {
 			case 1:
 				bioParcController.borrarTablas();
-				Thread.sleep(2222);
+				//Thread.sleep(2222);
 				break;
 
 			case 2:
 				bioParcController.crearTablas();
-				Thread.sleep(2222);
+				//Thread.sleep(2222);
 				break;
 
 			case 3:
-				bioParcController.oneByOne();
-				Thread.sleep(2222);
+				bioParcController.poblarTablas();
+				//Thread.sleep(2222);
 				break;
 
 			case 4:
-				playerController.createPlayer();
+				animalController.consultaClaseConcreta();
 				// dbaccessor.altaAutor();
 				break;
 
 			case 5:
-				matchController.createMatch();
+				animalController.consultaOrdenConcreta();
 				// dbaccessor.altaRevista();
 				break;
 
 			case 6:
+				animalController.consultaNombreConcreta();
 				// dbaccessor.altaArticle();
 				break;
 
 			case 7:
-				// dbaccessor.actualitzarTitolRevistes(conn);
+				animalController.consultaDietaConcreta();;
 				break;
 
 			case 8:

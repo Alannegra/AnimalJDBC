@@ -17,12 +17,12 @@ public class JDBCMenu {
 			System.out.println(" \nMENU PRINCIPAL \n");
 
 			System.out.println("1. Borrar las tablas de la base de datos y su información");
-			System.out.println("2. Crear las tablas de la base de datos.");
-			System.out.println("3. Crea Equip");
-			System.out.println("4. Crea Jugador");
-			System.out.println("5. Crea Partit");
-			System.out.println("6. Mostra jugadors a un equip");
-			System.out.println("7. Assigna jugador a un equip");
+			System.out.println("2. Crear las tablas de la base de datos");
+			System.out.println("3. Poblar masivamente las tablas de la base de datos");
+			System.out.println("4. Animales con clase a selecionar");
+			System.out.println("5. Animales con orden a selecionar");
+			System.out.println("6. Animales que tengan el numero de letras a selecionar");
+			System.out.println("7. Animales que contengan la palabra a selecionar en la dieta");
 			System.out.println("8. Desvincula jugador d'un equip");
 			System.out.println("9. Carrega estadístiques");
 			System.out.println("10. Sortir");
