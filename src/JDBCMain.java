@@ -16,6 +16,7 @@ public class JDBCMain {
 		MatchController matchController = new MatchController(c);
 		BioParcController bioParcController = new BioParcController(c);
 		AnimalController animalController = new AnimalController(c);
+		HabitatController habitatController = new HabitatController(c);
 		
 //		Connection conn = null;
 //		Identity identity;
@@ -35,59 +36,66 @@ public class JDBCMain {
 		int option = menu.mainMenu();
 		while (option > 0 && option < 12) {
 			switch (option) {
-			case 1:
-				bioParcController.borrarTablas();
-				//Thread.sleep(2222);
-				break;
+				case 1:
+					bioParcController.borrarTablas();
+					//Thread.sleep(2222);
+					break;
 
-			case 2:
-				bioParcController.crearTablas();
-				//Thread.sleep(2222);
-				break;
+				case 2:
+					bioParcController.crearTablas();
+					//Thread.sleep(2222);
+					break;
 
-			case 3:
-				bioParcController.poblarTablas();
-				//Thread.sleep(2222);
-				break;
+				case 3:
+					bioParcController.poblarTablas();
+					//Thread.sleep(2222);
+					break;
 
-			case 4:
-				animalController.consultaClaseConcreta();
-				// dbaccessor.altaAutor();
-				break;
+				case 4:
+					animalController.consultaClaseConcreta();
+					// dbaccessor.altaAutor();
+					break;
 
-			case 5:
-				animalController.consultaOrdenConcreta();
-				// dbaccessor.altaRevista();
-				break;
+				case 5:
+					animalController.consultaOrdenConcreta();
+					// dbaccessor.altaRevista();
+					break;
 
-			case 6:
-				animalController.consultaNombreConcreta();
-				// dbaccessor.altaArticle();
-				break;
+				case 6:
+					animalController.consultaNombreConcreta();
+					// dbaccessor.altaArticle();
+					break;
 
-			case 7:
-				animalController.consultaDietaConcreta();;
-				break;
+				case 7:
+					animalController.consultaDietaConcreta();;
+					break;
 
-			case 8:
-				// dbaccessor.afegeixArticleARevista(conn);
-				break;
+				case 8:
+					animalController.modificarNombre();
+					break;
 
-			case 9:
-				// dbaccessor.desassignaArticleARevista(conn);
-				break;
+				case 9:
+					habitatController.consultaHabitat();
+					animalController.modificarOrdenesPorHabitat();
+					break;
 
-			case 10:
-				// dbaccessor.carregaAutors(conn);
-				break;
+				case 10:
+					animalController.eliminarAnimal();
+					break;
 
-			case 11:
-				// dbaccessor.sortir();
-				break;
+				case 11:
+					animalController.eliminarAnimalesPorClase();
+					break;
 
-			default:
-				System.out.println("Introdueixi una de les opcions anteriors");
-				break;
+				case 12:
+					System.out.println("ADIOS!");
+					c.close();
+					System.exit(0);
+					break;
+
+				default:
+					System.out.println("Introdueixi una de les opcions anteriors");
+					break;
 
 			}
 			option = menu.mainMenu();

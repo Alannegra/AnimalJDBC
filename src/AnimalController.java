@@ -43,7 +43,7 @@ public class AnimalController {
         try{
             Statement st = connection.createStatement();
             rs = st.executeQuery(sql);
-            System.out.print("| ");
+
             int cont = 0;
             while (rs.next()) {
                 if(cont % 5 == 0){
@@ -56,6 +56,24 @@ public class AnimalController {
                 cont++;
             }
             System.out.println();
+
+            rs.close();
+            st.close();
+        }catch (Exception e){
+            System.out.println("ERROR" + e);
+        }
+    }
+
+    public void consultaNombre(){
+        ResultSet rs = null;
+        String sql = "SELECT id,nombre FROM animal";
+        try{
+            Statement st = connection.createStatement();
+            rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                System.out.println(" | " + rs.getString("id") + " | " + rs.getString("nombre") + " | ");
+            }
 
             rs.close();
             st.close();
@@ -106,7 +124,70 @@ public class AnimalController {
         consultaToString(sql);
     }
 
-    public void consultaToString(String sql){
+    public void modificarNombre(){
+        try {
+            consultaNombre();
+            Statement st = connection.createStatement();
+            System.out.println("Escribe el numero de la id");
+            String word = scanner.nextLine();
+            System.out.println("Escribe el nuevo nombre: ");
+            String word2 = scanner.nextLine();
+            st.executeUpdate("update animal set nombre='" + word2 + "' where id=" + word );
+            st.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void modificarOrdenesPorHabitat() {
+        try {
+            consultaClase();
+            Statement st = connection.createStatement();
+            System.out.println("Escribe el habitat de los animales a modificar: ");
+            String word = scanner.nextLine().toUpperCase();
+            System.out.println("Escribe la orden a modificar: ");
+            String word2 = scanner.nextLine();
+
+            st.executeUpdate("update animal set orden='" + word2 + "' where habitat='" + word + "'");
+            st.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void eliminarAnimal() {
+        try {
+            consultaNombre();
+            Statement st = connection.createStatement();
+            System.out.println("Escribe el numero de la id");
+            String word = scanner.nextLine();
+            st.executeUpdate("delete from animal where id=" + word);
+            st.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void eliminarAnimalesPorClase() {
+        try {
+            consultaClase();
+            Statement st = connection.createStatement();
+            System.out.println("Escribe la clase: ");
+            String word = scanner.nextLine();
+            String str = word.toLowerCase();
+            String clase = str.substring(0, 1).toUpperCase() + str.substring(1);
+            st.executeUpdate("delete from animal where clase='" + clase +"'");
+            st.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+        public void consultaToString(String sql){
         ResultSet rs = null;
         try{
             Statement st = connection.createStatement();

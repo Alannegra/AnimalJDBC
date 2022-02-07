@@ -23,9 +23,11 @@ public class JDBCMenu {
 			System.out.println("5. Animales con orden a selecionar");
 			System.out.println("6. Animales que tengan el numero de letras a selecionar");
 			System.out.println("7. Animales que contengan la palabra a selecionar en la dieta");
-			System.out.println("8. Desvincula jugador d'un equip");
-			System.out.println("9. Carrega estadístiques");
-			System.out.println("10. Sortir");
+			System.out.println("8. Modificar el nombre de un animal a selecionar");
+			System.out.println("9. Modificar todas las ordenes de una clase a selecionar");
+			System.out.println("10. Elimina un animal a selecionar");
+			System.out.println("11. Elimina todos los animales de una clase a selecionar");
+			System.out.println("12. SALIR");
 			System.out.println("Esculli opció: ");
 			try {
 				option = Integer.parseInt(br.readLine());
@@ -36,7 +38,7 @@ public class JDBCMenu {
 			}
 
 		} while (option != 1 && option != 2 && option != 3 && option != 4 && option != 5 && option != 6 && option != 7
-				&& option != 8 && option != 9 && option != 10);
+				&& option != 8 && option != 9 && option != 10 && option != 11 && option != 12);
 
 		return option;
 	}
