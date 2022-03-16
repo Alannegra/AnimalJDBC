@@ -13,9 +13,10 @@ public class AnimalController {
         this.scanner = new Scanner(System.in);
     }
 
-   /*Seleccionar todos los elementos que contengan un texto concreto.
-    Seleccionar todos los elementos que cumplan una condición.
-    Seleccionar elementos concretos.*/
+
+    /**
+     * Metodo consultaClase: Se encarga de mostrar por terminal una consulta concreta conectandose previamente a la base de datos.
+     */
 
     public void consultaClase(){
         ResultSet rs = null;
@@ -36,6 +37,10 @@ public class AnimalController {
             System.out.println("ERROR" + e);
         }
     }
+
+    /**
+     * Metodo consultaOrden: Se encarga de mostrar por terminal una consulta concreta conectandose previamente a la base de datos.
+     */
 
     public void consultaOrden(){
         ResultSet rs = null;
@@ -64,6 +69,10 @@ public class AnimalController {
         }
     }
 
+    /**
+     * Metodo consultaNombre: Se encarga de mostrar por terminal una consulta concreta conectandose previamente a la base de datos.
+     */
+
     public void consultaNombre(){
         ResultSet rs = null;
         String sql = "SELECT id,nombre FROM animal";
@@ -82,6 +91,10 @@ public class AnimalController {
         }
     }
 
+    /**
+     * Metodo consultaClaseConcreta: Se encarga de mostrar por terminal la consulta deseada escribiendo en el terminal previamente la clase del animal conectandose previamente a la base de datos.
+     */
+
     public void consultaClaseConcreta(){
         consultaClase();
         System.out.println("Escribe la clase a mostrar: ");
@@ -92,6 +105,10 @@ public class AnimalController {
         consultaToString(sql);
     }
 
+    /**
+     * Metodo consultaClaseConcreta: Se encarga de mostrar por terminal la consulta deseada escribiendo en el terminal previamente la orden del animal conectandose previamente a la base de datos.
+     */
+
     public void consultaOrdenConcreta(){
         consultaOrden();
         System.out.println("Escribe el orden a mostrar: ");
@@ -101,6 +118,10 @@ public class AnimalController {
         String sql = "SELECT * FROM animal where orden='" + clase + "'";
         consultaToString(sql);
     }
+
+    /**
+     * Metodo consultaDietaConcreta: Se encarga de mostrar por terminal la consulta deseada escribiendo en el terminal previamente la dieta del animal conectandose previamente a la base de datos.
+     */
 
     public void consultaDietaConcreta(){
         System.out.println("|@#|@#|@# EJEMPLOS #@|#@|#@|");
@@ -117,12 +138,20 @@ public class AnimalController {
         consultaToString2(sql);
     }
 
+    /**
+     * Metodo consultaNombreConcreta: Se encarga de mostrar por terminal la consulta deseada escribiendo en el terminal previamente el nombre del animal conectandose previamente a la base de datos.
+     */
+
     public void consultaNombreConcreta(){
         System.out.println("Escribe un numero: ");
         String word = scanner.nextLine();
         String sql = "SELECT * FROM animal where LENGtH(nombre) <=" + word;
         consultaToString(sql);
     }
+
+    /**
+     * Metodo modificarNombre: Se encarga de brindarnos la posibilidad de modificar por terminal el nombre deseado escribiendo en el terminal el nombre del animal conectandose previamente a la base de datos.
+     */
 
     public void modificarNombre(){
         try {
@@ -140,13 +169,17 @@ public class AnimalController {
         }
     }
 
+    /**
+     * Metodo modificarOrdenesPorHabitat: Se encarga de brindarnos la posibilidad de modificar por terminal el orden animal deseado escribiendo en el terminal el orden animal conectandose previamente a la base de datos.
+     */
+
     public void modificarOrdenesPorHabitat() {
         try {
             consultaClase();
             Statement st = connection.createStatement();
             System.out.println("Escribe el habitat de los animales a modificar: ");
             String word = scanner.nextLine().toUpperCase();
-            System.out.println("Escribe la orden a modificar: ");
+            System.out.println("Escribe el orden a modificar: ");
             String word2 = scanner.nextLine();
 
             st.executeUpdate("update animal set orden='" + word2 + "' where habitat='" + word + "'");
@@ -156,6 +189,10 @@ public class AnimalController {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Metodo eliminarAnimal: Se encarga de brindarnos la posibilidad de eliminar por terminal un animal deseado escribiendo en el terminal el nombre del animal conectandose previamente a la base de datos.
+     */
 
     public void eliminarAnimal() {
         try {
@@ -170,6 +207,10 @@ public class AnimalController {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Metodo eliminarAnimalesPorClase: Se encarga de brindarnos la posibilidad de eliminar por terminal toddos los animales deseados escribiendo en el terminal la clase del animal conectandose previamente a la base de datos.
+     */
 
     public void eliminarAnimalesPorClase() {
         try {
@@ -186,6 +227,12 @@ public class AnimalController {
             e.printStackTrace();
         }
     }
+
+
+    /**
+     * Metodo consultaToString: Se encarga de mostrar por pantalla de una manera mas visual la respuesta a nuestro parametro que es una consulta
+     * @param sql Sentencia sql
+     */
 
         public void consultaToString(String sql){
         ResultSet rs = null;
@@ -212,6 +259,11 @@ public class AnimalController {
         }
 
     }
+
+    /**
+     * Metodo consultaToString2: Se encarga de mostrar por pantalla de una manera mas visual la respuesta a nuestro parametro que es una consulta
+     * @param sql Sentencia sql
+     */
 
     public void consultaToString2(String sql){
         ResultSet rs = null;
