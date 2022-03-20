@@ -67,7 +67,7 @@ public class JDBCMain {
 					break;
 
 				case 7:
-					animalController.consultaDietaConcreta();;
+					animalController.consultaDietaConcreta();
 					break;
 
 				case 8:
@@ -76,7 +76,7 @@ public class JDBCMain {
 
 				case 9:
 					habitatController.consultaHabitat();
-					animalController.modificarOrdenesPorHabitat();
+					animalController.modificarClasesPorHabitat();
 					break;
 
 				case 10:

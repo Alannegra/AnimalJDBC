@@ -170,19 +170,19 @@ public class AnimalController {
     }
 
     /**
-     * Metodo modificarOrdenesPorHabitat: Se encarga de brindarnos la posibilidad de modificar por terminal el orden animal deseado escribiendo en el terminal el orden animal conectandose previamente a la base de datos.
+     * Metodo modificarClasesPorHabitat: Se encarga de brindarnos la posibilidad de modificar por terminal la clase animal deseado escribiendo en el terminal la clase animal conectandose previamente a la base de datos.
      */
 
-    public void modificarOrdenesPorHabitat() {
+    public void modificarClasesPorHabitat() {
         try {
             consultaClase();
             Statement st = connection.createStatement();
             System.out.println("Escribe el habitat de los animales a modificar: ");
             String word = scanner.nextLine().toUpperCase();
-            System.out.println("Escribe el orden a modificar: ");
+            System.out.println("Escribe el nuevo nombre de la clase a modificar en todos los animales del habitat selecionada: ");
             String word2 = scanner.nextLine();
 
-            st.executeUpdate("update animal set orden='" + word2 + "' where habitat='" + word + "'");
+            st.executeUpdate("update animal set clase='" + word2 + "' where habitat='" + word + "'");
             st.close();
 
         } catch (SQLException e) {

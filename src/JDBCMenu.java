@@ -24,7 +24,7 @@ public class JDBCMenu {
 			System.out.println("6. Animales que tengan el numero de letras a selecionar");
 			System.out.println("7. Animales que contengan la palabra a selecionar en la dieta");
 			System.out.println("8. Modificar el nombre de un animal a selecionar");
-			System.out.println("9. Modificar todas las ordenes de una clase a selecionar");
+			System.out.println("9. Modificar todas las ordenes de un habitat a selecionar");
 			System.out.println("10. Elimina un animal a selecionar");
 			System.out.println("11. Elimina todos los animales de una clase a selecionar");
 			System.out.println("12. SALIR");
