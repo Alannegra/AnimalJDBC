@@ -4,10 +4,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
+/**
+ * Clase AnimalController: Se encarga de controlar la tabla Animal en la base de datos.
+ */
 public class AnimalController {
     private Connection connection;
     private Scanner scanner;
 
+    /**
+     * Constructor AnimalController: Se encarga de construir la clase.
+     * @param connection Conexión a la base de datos
+     */
     public AnimalController(Connection connection) {
         this.connection = connection;
         this.scanner = new Scanner(System.in);

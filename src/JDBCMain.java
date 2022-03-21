@@ -3,6 +3,9 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.ParseException;
 
+/**
+ * Clase JDBCMain: Se encarga de manejar el panel de control gracias al switch.
+ */
 public class JDBCMain {
 
 	public static void main(String[] args) throws IOException, SQLException, ParseException, InterruptedException {
@@ -11,27 +14,11 @@ public class JDBCMain {
 		ConnectionFactory connectionFactory = ConnectionFactory.getInstance();
 		Connection c = connectionFactory.connect();
 
-		TeamController teamController = new TeamController(c);
-		PlayerController playerController = new PlayerController(c);
-		MatchController matchController = new MatchController(c);
+
 		BioParcController bioParcController = new BioParcController(c);
 		AnimalController animalController = new AnimalController(c);
 		HabitatController habitatController = new HabitatController(c);
-		
-//		Connection conn = null;
-//		Identity identity;
-//		int option;
-//		int intents = 0;
-//		DBAccessor dbaccessor = new DBAccessor();
-//		dbaccessor.init();
-//		while (intents < 3 && conn == null) {
-//			identity = menu.authenticate(intents);
-//			// prova de test
-//			identity.toString();
-//
-//			conn = dbaccessor.getConnection(identity);
-//			intents++;
-//		}
+
 
 		int option = menu.mainMenu();
 		while (option > 0 && option < 12) {

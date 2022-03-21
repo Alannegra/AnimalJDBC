@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * Clase ConnectionFactory: Se encarga de conectarse a la base de datos gracias al archivo db.properties.
+ */
 public class ConnectionFactory {
 	// init database constants
 	private static final String DATABASE_DRIVER = "org.postgresql.Driver";
@@ -118,21 +121,6 @@ public class ConnectionFactory {
 		}
 	}
 	
-//	public void init() {
-//		Properties prop = new Properties();
-//		InputStream propStream = this.getClass().getClassLoader().getResourceAsStream("db.properties");
-//
-//		try {
-//			prop.load(propStream);
-//			this.host = prop.getProperty("host");
-//			this.port = prop.getProperty("port");
-//			this.dbname = prop.getProperty("dbname");
-//			this.schema = prop.getProperty("schema");
-//		} catch (IOException e) {
-//			String message = "ERROR: db.properties file could not be found";
-//			System.err.println(message);
-//			throw new RuntimeException(message, e);
-//		}
-//	}
+
 	
 }

@@ -1,4 +1,7 @@
 
+/**
+ * Clase Identity: Se encarga de la identificacion para conectarse a la base de datos gracias al archivo db.properties.
+ */
 public class Identity {
 	private String user;
 	private String password;

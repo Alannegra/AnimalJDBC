@@ -2,6 +2,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Clase JDBCMenu: Se encarga de mostrar por pantalla las distintas opciones del menu.
+ */
 public class JDBCMenu {
 	private int option;
 

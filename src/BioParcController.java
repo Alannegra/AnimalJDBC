@@ -12,13 +12,23 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase BioParcController: Se encarga de controlar la base de datos bioparc.
+ */
 public class BioParcController {
     private Connection connection;
 
+    /**
+     * Constructor BioParcController: Se encarga de construir la clase.
+     * @param connection Conexión a la base de datos
+     */
     public BioParcController(Connection connection) {
         this.connection = connection;
     }
 
+    /**
+     * Metodo borrarTablas: Se encarga de borrar las dos unicas tablas de la base de datos.
+     */
         public void borrarTablas(){
                 try {
                     Statement st = connection.createStatement();
@@ -32,6 +42,9 @@ public class BioParcController {
             }
         }
 
+    /**
+     * Metodo crearTablas: Se encarga de crear las dos tablas de la base de datos.
+     */
         public void crearTablas(){
             try {
                 Statement st = connection.createStatement();
@@ -64,6 +77,9 @@ public class BioParcController {
             }
         }
 
+    /**
+     * Metodo poblarTablas: Se encarga de poblar las dos tablas de la base de datos.
+     */
     public void poblarTablas()  {
         int num = 0 ;
         int num2 = 0 ;
