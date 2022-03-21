@@ -1,4 +1,4 @@
-#AnimalJDBC
+# AnimalJDBC
 ## Práctica JDBC
 ### Intro
 #### Con la utilización JDBC PostgreSQLDriver y la informacion extraída en el proyecto WebScrapping llamado Animal he conseguido diseñar un programa capaz de borrar, crear y poblar tablas, capaz de realizar consultas, gestiónar resultados, modificarlos y procesarlos.
